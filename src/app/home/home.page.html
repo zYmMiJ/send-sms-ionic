@@ -6,15 +6,21 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content padding>
+  <p>
+    Click the button to get sim info
+  </p>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <button ion-button full (click)="getSimData()">get info</button>
+  <ion-card  *ngFor= "let card of cards" >
+    <ion-card-header>
+      {{card.carrierName}}
+    </ion-card-header>
+    <ion-card-content>
+      <pre>{{ simInfo | json }}</pre>
+    </ion-card-content>
+  </ion-card>
+  <ion-button (click)="permission()">get permission</ion-button>
+  <ion-button (click)="permissionCamera()">get permission camera</ion-button>
+  <ion-button (click)="sendSMS()">Send SMS</ion-button>
 </ion-content>
