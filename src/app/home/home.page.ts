@@ -50,7 +50,7 @@ export class HomePage {
           result => {
             console.log('Has permission?', result.hasPermission);
             console.log('Success');
-            this.sms.send('687917087', 'Hello world!');
+            this.sms.send('791172', 'Hello world!');
           },
           err => this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.SEND_SMS)
       );
